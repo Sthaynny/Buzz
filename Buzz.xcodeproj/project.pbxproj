@@ -13,6 +13,7 @@
 		C2EEB4962D4C046700696DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2EEB48C2D4C046700696DD7 /* Assets.xcassets */; };
 		C2EEB4982D4C046700696DD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EEB48F2D4C046700696DD7 /* LaunchScreen.storyboard */; };
 		C2EEB49C2D4C04E000696DD7 /* NewsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB49B2D4C04D400696DD7 /* NewsListRouter.swift */; };
+		C2EEB49F2D4C0F7900696DD7 /* URLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB49E2D4C0F7900696DD7 /* URLSessionNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		C2EEB4902D4C046700696DD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C2EEB4912D4C046700696DD7 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		C2EEB49B2D4C04D400696DD7 /* NewsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRouter.swift; sourceTree = "<group>"; };
+		C2EEB49E2D4C0F7900696DD7 /* URLSessionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -106,6 +108,7 @@
 		C2EEB4922D4C046700696DD7 /* Buzz */ = {
 			isa = PBXGroup;
 			children = (
+				C2EEB49D2D4C0F5B00696DD7 /* Services */,
 				C2EEB4992D4C046900696DD7 /* Scenes */,
 				C2EEB48B2D4C046700696DD7 /* AppDelegate.swift */,
 				C2EEB48C2D4C046700696DD7 /* Assets.xcassets */,
@@ -131,6 +134,14 @@
 				C2EEB4912D4C046700696DD7 /* NewsListViewController.swift */,
 			);
 			path = NewsList;
+			sourceTree = "<group>";
+		};
+		C2EEB49D2D4C0F5B00696DD7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2EEB49E2D4C0F7900696DD7 /* URLSessionNetwork.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2EEB4932D4C046700696DD7 /* AppDelegate.swift in Sources */,
+				C2EEB49F2D4C0F7900696DD7 /* URLSessionNetwork.swift in Sources */,
 				C2EEB49C2D4C04E000696DD7 /* NewsListRouter.swift in Sources */,
 				C2EEB4942D4C046700696DD7 /* SceneDelegate.swift in Sources */,
 				C2EEB4952D4C046700696DD7 /* NewsListViewController.swift in Sources */,
