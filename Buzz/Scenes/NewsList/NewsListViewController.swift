@@ -14,8 +14,7 @@ protocol NewsListDisplayLogic: AnyObject{
 
 class NewsListViewController: UIViewController {
     
-//    private let interector = NewsListInterector()
-    
+    var interector:NewsListBusinessLogic?
     var displayedArticle: [ NewsListModel.FetchNews.ViewModel.DisplayedArticle] = [ ]
     
     private lazy var newsListTableView: UITableView = {
@@ -23,15 +22,31 @@ class NewsListViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.delegate = self
         table.dataSource = self
+        table.register(NewsListArticleCell.self, forCellReuseIdentifier: NewsListArticleCell.identifier)
         return table
     }( )
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .primary
-//        interector.loadNews(resquest: NewsListModel.FetchNews.Request() )
+        setup()
+        fetchNews()
         addSubviews()
         setupConstraints()
+    }
+    
+    private func setup( ){
+        let viewController = self
+        let interactor = NewsListInterector()
+        let presenter = NewsListPresenter()
+        viewController.interector = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+    }
+    
+    private func fetchNews( ){
+        interector?.loadNews(resquest: NewsListModel.FetchNews.Request())
+        
     }
     
     private func addSubviews(){
@@ -58,12 +73,10 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        var content = cell.defaultContentConfiguration()
+         
         let article = displayedArticle[indexPath.row]
-        content.text = article.title
-        cell.contentConfiguration = content
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsListArticleCell.identifier, for: indexPath) as? NewsListArticleCell else { return UITableViewCell() }
+        cell.configure(with: article)
         return cell
     }
     
