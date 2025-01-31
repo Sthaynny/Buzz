@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol NewsListDisplayLogic: AnyObject{
+    func displayFetchedNews( viewModel: NewsListModel.FetchNews.ViewModel)
+    func displayError(messege: String)
+}
+
 class NewsListViewController: UIViewController {
     
 //    private let interector = NewsListInterector()
+    
+    var displayedArticle: [ NewsListModel.FetchNews.ViewModel.DisplayedArticle] = [ ]
+    
     private lazy var newsListTableView: UITableView = {
         let table = UITableView( )
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -45,14 +53,15 @@ class NewsListViewController: UIViewController {
 
 extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return displayedArticle.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
-        content.text = "Noticia"
+        let article = displayedArticle[indexPath.row]
+        content.text = article.title
         cell.contentConfiguration = content
         
         return cell
@@ -61,3 +70,19 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
     
 }
 
+
+
+extension NewsListViewController: NewsListDisplayLogic{
+    func displayFetchedNews(viewModel: NewsListModel.FetchNews.ViewModel) {
+        self.displayedArticle = viewModel.displayedArticle
+        newsListTableView.reloadData()
+    }
+    
+    func displayError(messege: String) {
+        let alert = UIAlertController(title: "Erro", message: messege, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+    }
+    
+    
+}
