@@ -17,6 +17,15 @@ class NewsListDetailsViewController: UIViewController {
     var articleId:Int
     var displayedArticle: NewsListDetailsModel.FetchDetaislNews.ViewModel.DisplayedDetailsNews?
     var interector: NewsListDetailsBusinessLogic?
+    private lazy var articleTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 22.0, weight: .bold)
+        label.numberOfLines = 0
+        return label
+    }()
     
     init(articleId: Int) {
         self.articleId = articleId
@@ -30,7 +39,10 @@ class NewsListDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .primary
-        
+        setup()
+        fetchDetailsNews()
+        addSubviews()
+        setupConstraints()
         // Do any additional setup after loading the view.
     }
     
@@ -41,6 +53,22 @@ class NewsListDetailsViewController: UIViewController {
         viewController.interector = interector
         interector.presenter = presenter
         presenter.viewController = viewController
+    }
+    
+    func fetchDetailsNews(){
+        interector?.loadNewsFrom(id: articleId)
+    }
+    
+    private func addSubviews() {
+        view.addSubview(articleTitleLabel)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            articleTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            articleTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
+            articleTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
+        ])
     }
     
 
