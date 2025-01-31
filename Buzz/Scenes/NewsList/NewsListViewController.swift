@@ -8,10 +8,13 @@
 import UIKit
 
 class NewsListViewController: UIViewController {
+    
+    private let interector = NewsListInterector()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red 
+        view.backgroundColor = .red
+        interector.loadNews()
     }
 
 

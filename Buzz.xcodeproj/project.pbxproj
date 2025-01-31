@@ -16,6 +16,7 @@
 		C2EEB49F2D4C0F7900696DD7 /* URLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB49E2D4C0F7900696DD7 /* URLSessionNetwork.swift */; };
 		C2EEB4A22D4C12D100696DD7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4A12D4C12D100696DD7 /* Article.swift */; };
 		C2EEB4A52D4C132F00696DD7 /* NewsAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4A42D4C132F00696DD7 /* NewsAPIWorker.swift */; };
+		C2EEB4A82D4C15CD00696DD7 /* NewaListInterector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4A72D4C15CD00696DD7 /* NewaListInterector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C2EEB49E2D4C0F7900696DD7 /* URLSessionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetwork.swift; sourceTree = "<group>"; };
 		C2EEB4A12D4C12D100696DD7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		C2EEB4A42D4C132F00696DD7 /* NewsAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIWorker.swift; sourceTree = "<group>"; };
+		C2EEB4A72D4C15CD00696DD7 /* NewaListInterector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewaListInterector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -138,6 +140,7 @@
 			children = (
 				C2EEB49B2D4C04D400696DD7 /* NewsListRouter.swift */,
 				C2EEB4912D4C046700696DD7 /* NewsListViewController.swift */,
+				C2EEB4A72D4C15CD00696DD7 /* NewaListInterector.swift */,
 			);
 			path = NewsList;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2EEB4932D4C046700696DD7 /* AppDelegate.swift in Sources */,
+				C2EEB4A82D4C15CD00696DD7 /* NewaListInterector.swift in Sources */,
 				C2EEB4A52D4C132F00696DD7 /* NewsAPIWorker.swift in Sources */,
 				C2EEB49F2D4C0F7900696DD7 /* URLSessionNetwork.swift in Sources */,
 				C2EEB4A22D4C12D100696DD7 /* Article.swift in Sources */,

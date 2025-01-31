@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum NewsAPIWorker{
+enum NewsAPI{
     static let baseUrl = "https://my-json-server.typicode.com/alura-cursos/news-api"
     static var articles : String{
         return baseUrl+"/articles"
@@ -16,7 +16,7 @@ enum NewsAPIWorker{
 }
  
 
-class NetworkAPIWorker{
+class NewsAPIWorker{
     private let networkService : NetworkingService
     
     init(networkService: NetworkingService) {
@@ -24,7 +24,7 @@ class NetworkAPIWorker{
     }
     
     func fetchNews(completion: @escaping (Result<[Article], Error>)-> Void)  {
-        guard let url = URL(string: NewsAPIWorker.articles) else {
+        guard let url = URL(string: NewsAPI.articles) else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
