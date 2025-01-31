@@ -19,6 +19,8 @@ class NewsListInterector: NewsListDataStore, NewsListBusinessLogic{
     private var worker : NewsAPIWorker
       var articles : [Article] = []
     
+    var presenter: NewsListPresentationLogic?
+    
     init(worker: NewsAPIWorker = NewsAPIWorker(networkService: URLSessionNetwork( ))) {
         self.worker = worker
     }
@@ -33,9 +35,11 @@ class NewsListInterector: NewsListDataStore, NewsListBusinessLogic{
                     case .success(let success):
                         self.articles = success
                         let response = NewsListModel.FetchNews.Response(articles: success)
+                        self.presenter?.presentFetchedNews(response: response)
                         print(success)
                     case .failure(let failure):
                         print("Ocorreu um erro ao obter a lista de noticias: \(failure.localizedDescription)")
+                        self.presenter?.presnterError(error: failure)
                 }
             }
         }
