@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol NewsListDetialsDisplayLogic{
+    func displayedDetailsNews(viewModel: NewsListDetailsModel.FetchDetaislNews.ViewModel)
+    func displayedError(messege: String)
+}
+
 class NewsListDetailsViewController: UIViewController {
     
     var articleId:Int
+    var displayedArticle: NewsListDetailsModel.FetchDetaislNews.ViewModel.DisplayedDetailsNews?
+    var interector: NewsListDetailsBusinessLogic?
     
     init(articleId: Int) {
         self.articleId = articleId
@@ -27,6 +34,15 @@ class NewsListDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func setup(){
+        let viewController = self
+        let interector = NewsListDetailsInteractor()
+        let presenter = NewsListDetailsPresenter()
+        viewController.interector = interector
+        interector.presenter = presenter
+        presenter.viewController = viewController
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -38,4 +54,20 @@ class NewsListDetailsViewController: UIViewController {
     }
     */
 
+}
+
+
+extension NewsListDetailsViewController : NewsListDetialsDisplayLogic{
+    
+    func displayedDetailsNews(viewModel: NewsListDetailsModel.FetchDetaislNews.ViewModel)  {
+        self.displayedArticle = viewModel.displayedDetailsArticle
+    }
+    
+    func displayedError(messege: String) {
+        let alert = UIAlertController(title: "Erro", message: messege, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+    }
+    
+     
 }
