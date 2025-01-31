@@ -13,7 +13,7 @@ struct NewsListDetailsModel {
             let id:Int
         }
         struct Response {
-            let article:Article
+            let article:Article?
         }
         struct ViewModel {
             struct DisplayedDetailsNews {

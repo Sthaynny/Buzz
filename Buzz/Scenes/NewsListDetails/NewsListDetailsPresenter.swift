@@ -18,6 +18,7 @@ class NewsListDetailsPresenter: NewsListDetailsPresentationLogic {
     
     func presentFetchedDetaislNews(response: NewsListDetailsModel.FetchDetaislNews.Response) {
         let displayer = response.article
+        guard let displayer else { return  }
         let viewModel = NewsListDetailsModel.FetchDetaislNews.ViewModel.init(displayedDetailsArticle: NewsListDetailsModel.FetchDetaislNews.ViewModel.DisplayedDetailsNews(title: displayer.title, description: displayer.description ?? "", author: displayer.author, publishedAt: displayer.publishedAt.formatDataPlublishAt(), imageUrl: displayer.url, content: displayer.content)
             )
         viewController?.displayedDetailsNews(viewModel: viewModel)

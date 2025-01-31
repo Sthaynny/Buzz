@@ -89,6 +89,7 @@ extension NewsListDetailsViewController : NewsListDetialsDisplayLogic{
     
     func displayedDetailsNews(viewModel: NewsListDetailsModel.FetchDetaislNews.ViewModel)  {
         self.displayedArticle = viewModel.displayedDetailsArticle
+        articleTitleLabel.text = self.displayedArticle?.title ?? ""
     }
     
     func displayedError(messege: String) {
