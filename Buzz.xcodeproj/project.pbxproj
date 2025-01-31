@@ -18,6 +18,7 @@
 		C2EEB4A52D4C132F00696DD7 /* NewsAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4A42D4C132F00696DD7 /* NewsAPIWorker.swift */; };
 		C2EEB4A82D4C15CD00696DD7 /* NewaListInterector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4A72D4C15CD00696DD7 /* NewaListInterector.swift */; };
 		C2EEB4AA2D4C595600696DD7 /* NewsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4A92D4C595000696DD7 /* NewsListModel.swift */; };
+		C2EEB4AD2D4C5CF800696DD7 /* NewsLiestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EEB4AC2D4C5CEA00696DD7 /* NewsLiestPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C2EEB4A42D4C132F00696DD7 /* NewsAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIWorker.swift; sourceTree = "<group>"; };
 		C2EEB4A72D4C15CD00696DD7 /* NewaListInterector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewaListInterector.swift; sourceTree = "<group>"; };
 		C2EEB4A92D4C595000696DD7 /* NewsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListModel.swift; sourceTree = "<group>"; };
+		C2EEB4AC2D4C5CEA00696DD7 /* NewsLiestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLiestPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -140,6 +142,7 @@
 		C2EEB49A2D4C048000696DD7 /* NewsList */ = {
 			isa = PBXGroup;
 			children = (
+				C2EEB4AC2D4C5CEA00696DD7 /* NewsLiestPresenter.swift */,
 				C2EEB4A92D4C595000696DD7 /* NewsListModel.swift */,
 				C2EEB49B2D4C04D400696DD7 /* NewsListRouter.swift */,
 				C2EEB4912D4C046700696DD7 /* NewsListViewController.swift */,
@@ -318,6 +321,7 @@
 				C2EEB4932D4C046700696DD7 /* AppDelegate.swift in Sources */,
 				C2EEB4A82D4C15CD00696DD7 /* NewaListInterector.swift in Sources */,
 				C2EEB4A52D4C132F00696DD7 /* NewsAPIWorker.swift in Sources */,
+				C2EEB4AD2D4C5CF800696DD7 /* NewsLiestPresenter.swift in Sources */,
 				C2EEB49F2D4C0F7900696DD7 /* URLSessionNetwork.swift in Sources */,
 				C2EEB4A22D4C12D100696DD7 /* Article.swift in Sources */,
 				C2EEB49C2D4C04E000696DD7 /* NewsListRouter.swift in Sources */,
