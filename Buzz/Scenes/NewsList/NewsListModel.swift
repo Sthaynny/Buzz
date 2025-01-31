@@ -8,22 +8,24 @@
 import Foundation
 
 struct NewsListModel{
-    struct Request {
-        
-    }
-    struct Response {
-        let articles:[Article]
-    }
-    
-    struct ViewModel {
-        struct DisplayedArticle {
-            let title:String
-            let description:String
-            let author:String
-            let publishedAt: String
-            let imageUrl:URL
+    struct FetchNews {
+        struct Request {
+            
+        }
+        struct Response {
+            let articles:[Article]
         }
         
-        let displayedArticle:[DisplayedArticle]
+        struct ViewModel {
+            struct DisplayedArticle {
+                let title:String
+                let description:String
+                let author:String
+                let publishedAt: String
+                let imageUrl:URL
+            }
+            
+            let displayedArticle:[DisplayedArticle]
+        }
     }
 }
